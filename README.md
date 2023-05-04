@@ -34,7 +34,7 @@
 
 ### Association
 
-- belongs_to :users
+- belongs_to :user
 - has_one :order
 
 ## orders テーブル
@@ -58,7 +58,7 @@
 | prefecture_id | integer    | null: false                    |
 | city          | string     | null: false                    |
 | address       | string     | null: false                    |
-| building      | string     | null: false                    |
+| building      | string     |                                |
 | phone_number  | string     | null: false                    |
 | order         | references | null: false, foreign_key: true |
 
