@@ -6,8 +6,11 @@ class User < ApplicationRecord
 
   validates :nickname, :birthday,      presence: true
 
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, format: { with: VALID_EMAIL_REGEX }
+
   VALID_PASSWORD_REGEX = /\A(?=.*[a-z])(?=.*\d)[a-z\d]+\z{6,}/i.freeze
-  validates :password,        format: { with: VALID_PASSWORD_REGEX }
+  validates :password, length: { minimum: 6 }, format: { with: VALID_PASSWORD_REGEX }
 
   with_options presence: true, format: {with: /\A[ぁ-んァ-ン一-龥々ー]+\z/ } do
     validates :first_name
