@@ -7,4 +7,5 @@ class Item < ApplicationRecord
   belongs_to :condition
   belongs_to :delivery_fee
   belongs_to :prefecture
+  belongs_to :delivery_date
 end
