@@ -38,7 +38,7 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include "First name can't be blank", "First name is invalid"
       end
 
-      it 'last_nameが空のでは登録できない' do
+      it 'last_nameが空では登録できない' do
       @user.last_name = ''
       @user.valid?
       expect(@user.errors.full_messages).to include "Last name can't be blank", "Last name is invalid"
@@ -56,7 +56,7 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include "Last name kana can't be blank", "Last name kana is invalid"
       end
 
-      it 'birthdayが空の場合は登録できない' do
+      it 'birthdayが空では登録できない' do
       @user.birthday = ''
       @user.valid?
       expect(@user.errors.full_messages).to include "Birthday can't be blank"
@@ -69,7 +69,7 @@ RSpec.describe User, type: :model do
       expect(another_user.errors.full_messages).to include("Email has already been taken")
       end
 
-      it 'passwordがpassword_confirmationが不一致だと登録できない' do
+      it 'passwordがpassword_confirmationが不一致では登録できない' do
       @user.password = 'a12345'
       @user.password_confirmation = 'a23456'
       @user.valid?
