@@ -3,12 +3,12 @@ window.addEventListener('load', () => {
   priceInput.addEventListener("input", () => {
     const inputValue = priceInput.value;
     const addTaxValue = Math.floor(inputValue * 0.1);
-    const addProfitValue = inputValue - addTaxValue;
+    const profitValue = inputValue - addTaxValue;
 
     const addTaxDom = document.getElementById("add-tax-price");
     addTaxDom.innerHTML = addTaxValue;
 
-    const addProfitDom = document.getElementById("profit");
-    addProfitDom.innerHTML = addProfitValue;
+    const profitDom = document.getElementById("profit");
+    profitDom.innerHTML = profitValue;
   })
 });
