@@ -6,7 +6,7 @@ RSpec.describe OrderPurchaser, type: :model do
       item = FactoryBot.create(:item)
       user = FactoryBot.create(:user)
       @order_purchaser = FactoryBot.build(:order_purchaser, user_id: user.id, item_id: item.id)
-      sleep(0.3)
+      sleep(0.1)
     end
   
     context '内容に問題ない場合' do
