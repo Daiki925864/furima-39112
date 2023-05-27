@@ -43,5 +43,6 @@ class OrdersController < ApplicationController
     elsif @item.order.present?
       redirect_to root_path
     end
+  end
 
 end
