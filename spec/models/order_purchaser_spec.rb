@@ -75,6 +75,12 @@ RSpec.describe OrderPurchaser, type: :model do
         expect(@order_purchaser.errors.full_messages).to include("Phone number is invalid")
       end
 
+      it 'tokenが空では保存できない' do
+        @order_purchaser.token = ''
+        @order_purchaser.valid?
+        expect(@order_purchaser.errors.full_messages).to include("Token can't be blank")
+      end
+
       it 'itemが紐付いていないと保存できない' do
         @order_purchaser.item_id = nil
         @order_purchaser.valid?
