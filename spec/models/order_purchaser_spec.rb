@@ -34,7 +34,7 @@ RSpec.describe OrderPurchaser, type: :model do
       end
 
       it 'prefecture_idを選択していないと保存できない' do
-        @order_purchaser.prefecture_id = '0'
+        @order_purchaser.prefecture_id = '1'
         @order_purchaser.valid?
         expect(@order_purchaser.errors.full_messages).to include("Prefecture can't be blank")
       end
