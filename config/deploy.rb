@@ -15,7 +15,7 @@ set :rbenv_ruby, '2.7.7'
 
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],
-                                  keys: ['~/.ssh/furima-39112.pem'] 
+                                  keys: ['~/.ssh/furima.pem'] 
 
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
